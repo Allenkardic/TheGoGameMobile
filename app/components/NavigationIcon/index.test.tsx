@@ -2,7 +2,7 @@
 // import renderer from 'react-test-renderer';
 // import {Pressable} from 'react-native';
 // import NavigationIcon from '.'; // Adjust the path to your component
-// import Icon from 'react-native-vector-icons/Feather'; // Ensure Icon is properly imported
+// import Icon from '@expo/vector-icons/Feather';
 
 // describe('NavigationIcon Component', () => {
 //   it('renders correctly with default icon', () => {

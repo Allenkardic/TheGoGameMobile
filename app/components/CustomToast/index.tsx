@@ -1,9 +1,9 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import Text from '../Typography';
-import Icon from 'react-native-vector-icons/Feather';
-import Toast, {BaseToastProps} from 'react-native-toast-message';
-import {Colors, Spacing} from '../../utils';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import Text from "../Typography";
+import Icon from "@expo/vector-icons/Feather";
+import Toast, { BaseToastProps } from "react-native-toast-message";
+import { Colors, Spacing } from "../../utils";
 
 export const toastConfig = {
   // success
@@ -13,13 +13,13 @@ export const toastConfig = {
         <View style={styles.content}>
           <View style={styles.firstContent}>
             <View style={styles.checkIconSuccess}>
-              <Icon name="check" size={15} color={'white'} />
+              <Icon name='check' size={15} color={"white"} />
             </View>
             <View style={styles.textContainer}>
-              <Text weight="medium" fontSize="large" color="primary">
+              <Text weight='medium' fontSize='large' color='primary'>
                 {props.text1}
               </Text>
-              <Text fontSize="small" style={styles.text2}>
+              <Text fontSize='small' style={styles.text2}>
                 {props.text2}
               </Text>
             </View>
@@ -27,8 +27,8 @@ export const toastConfig = {
 
           <Icon
             size={20}
-            color="#4C75F2"
-            name="x-circle"
+            color='#4C75F2'
+            name='x-circle'
             onPress={() => Toast.hide()}
           />
         </View>
@@ -43,13 +43,13 @@ export const toastConfig = {
         <View style={styles.content}>
           <View style={styles.firstContent}>
             <View style={styles.checkIcon}>
-              <Icon name="check" size={15} color={'white'} />
+              <Icon name='check' size={15} color={"white"} />
             </View>
             <View style={styles.textContainer}>
-              <Text weight="medium" fontSize="large" color="primary">
+              <Text weight='medium' fontSize='large' color='primary'>
                 {props.text1}
               </Text>
-              <Text fontSize="small" style={styles.text2}>
+              <Text fontSize='small' style={styles.text2}>
                 {props.text2}
               </Text>
             </View>
@@ -57,8 +57,8 @@ export const toastConfig = {
 
           <Icon
             size={20}
-            color="#4C75F2"
-            name="x-circle"
+            color='#4C75F2'
+            name='x-circle'
             onPress={() => Toast.hide()}
           />
         </View>
@@ -73,13 +73,13 @@ export const toastConfig = {
         <View style={styles.content}>
           <View style={styles.firstContent}>
             <View style={styles.checkIconError}>
-              <Icon name="x" size={15} color={'white'} />
+              <Icon name='x' size={15} color={"white"} />
             </View>
             <View style={styles.textContainer}>
-              <Text weight="medium" fontSize="large" style={styles.text1Error}>
+              <Text weight='medium' fontSize='large' style={styles.text1Error}>
                 {props.text1}
               </Text>
-              <Text fontSize="small" style={styles.text2Error}>
+              <Text fontSize='small' style={styles.text2Error}>
                 {props.text2}
               </Text>
             </View>
@@ -87,8 +87,8 @@ export const toastConfig = {
 
           <Icon
             size={20}
-            color={'red'}
-            name="x-circle"
+            color={"red"}
+            name='x-circle'
             onPress={() => Toast.hide()}
           />
         </View>
@@ -100,9 +100,9 @@ export const toastConfig = {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: Spacing.xxsmall,
-    backgroundColor: '#E7F0FF',
+    backgroundColor: "#E7F0FF",
     paddingVertical: Spacing.xxxsmall,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 12,
     paddingTop: Spacing.xxsmall,
     paddingBottom: Spacing.xxsmall,
@@ -110,9 +110,9 @@ const styles = StyleSheet.create({
 
   containerError: {
     marginHorizontal: Spacing.xxsmall,
-    backgroundColor: '#ffcccc',
+    backgroundColor: "#ffcccc",
     paddingVertical: Spacing.xxxsmall,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 12,
     paddingTop: Spacing.xxsmall,
     paddingBottom: Spacing.xxsmall,
@@ -122,28 +122,28 @@ const styles = StyleSheet.create({
     marginHorizontal: Spacing.xxsmall,
     backgroundColor: Colors.ghostWhite,
     paddingVertical: Spacing.xxxsmall,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 12,
     paddingTop: Spacing.xxsmall,
     paddingBottom: Spacing.xxsmall,
   },
 
   content: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
+    justifyContent: "space-between",
+    flexDirection: "row",
   },
 
   firstContent: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   checkIcon: {
     width: 25,
     height: 25,
     borderRadius: 25 / 2,
-    backgroundColor: '#4C75F2',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#4C75F2",
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   checkIconSuccess: {
@@ -151,32 +151,32 @@ const styles = StyleSheet.create({
     height: 25,
     borderRadius: 25 / 2,
     backgroundColor: Colors.green,
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   checkIconError: {
     width: 25,
     height: 25,
     borderRadius: 25 / 2,
-    backgroundColor: 'red',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "red",
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   textContainer: {
-    flexDirection: 'column',
+    flexDirection: "column",
     marginLeft: Spacing.xxsmall,
-    width: '80%',
+    width: "80%",
   },
 
   text1Error: {
-    color: 'red',
+    color: "red",
   },
 
-  text2: {color: '#074DB5'},
+  text2: { color: "#074DB5" },
   text2Error: {
-    color: '#fe6f6c',
+    color: "#fe6f6c",
   },
 });

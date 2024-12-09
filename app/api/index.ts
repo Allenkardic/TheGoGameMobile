@@ -1,42 +1,44 @@
-import axios, {AxiosError, AxiosResponse} from 'axios';
-import {Platform} from 'react-native';
-import NetInfo from '@react-native-community/netinfo';
-import Toast from 'react-native-toast-message';
-import {asyncStore, asyncGet, asyncRemove} from '../utils';
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { Platform } from "react-native";
+import NetInfo from "@react-native-community/netinfo";
+import Toast from "react-native-toast-message";
+import { asyncStore, asyncGet, asyncRemove } from "../utils";
 
 interface ErrorResponse {
   message: string;
 }
 
 const BASE_URL =
-  Platform.OS === 'android'
-    ? 'http://10.0.2.2:1234/'
-    : 'http://localhost:1234/';
+  Platform.OS === "android"
+    ? "http://10.0.2.2:1234/"
+    : "http://localhost:1234/";
+
+// const BASE_URL = "http://10.0.2.2:1234/";
 
 const instance = axios.create({
   baseURL: BASE_URL,
   timeout: 20000,
   headers: {
-    Accept: 'application/json',
+    Accept: "application/json",
   },
 });
 
 export const setUserName = async (username: string) => {
   if (username) {
-    await asyncStore('username', username);
+    await asyncStore("username", username);
   }
 };
 
 export const deleteUserName = async () => {
-  delete instance.defaults.headers.common['username'];
-  await asyncRemove('username');
+  delete instance.defaults.headers.common["username"];
+  await asyncRemove("username");
 };
 
 // Request Interceptor
-instance.interceptors.request.use(async config => {
-  const username = await asyncGet('username');
+instance.interceptors.request.use(async (config) => {
+  const username = await asyncGet("username");
   if (username) {
-    config.headers['username'] = `${username}`;
+    config.headers["username"] = `${username}`;
   }
   return config;
 });
@@ -46,7 +48,7 @@ instance.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error: AxiosError<ErrorResponse>) => {
     const defaultErrorMessage =
-      'An unexpected error occurred. Please try again.';
+      "An unexpected error occurred. Please try again.";
     let errorMessage = error.message;
 
     // Network errors
@@ -54,22 +56,22 @@ instance.interceptors.response.use(
       const netInfo = await NetInfo.fetch();
       const isConnected = netInfo.isConnected && netInfo.isInternetReachable;
       errorMessage = isConnected
-        ? 'Whoops, something went wrong. Please try again in a moment.'
+        ? "Whoops, something went wrong. Please try again in a moment."
         : "No internet connection. Please ensure you're connected to the internet and try again.";
     }
 
     // Server-side errors
     if (error.response) {
-      const {status, data} = error.response;
+      const { status, data } = error.response;
 
       switch (status) {
         case 401:
-          errorMessage = data?.message || 'Unauthorized access. Please log in.';
+          errorMessage = data?.message || "Unauthorized access. Please log in.";
           setTimeout(() => {
             Toast.show({
-              type: 'info',
+              type: "info",
               autoHide: true,
-              text1: 'An error occurred',
+              text1: "An error occurred",
               text2: errorMessage,
             });
           }, 1000);
@@ -78,17 +80,17 @@ instance.interceptors.response.use(
         case 403:
           errorMessage =
             data?.message ||
-            'Forbidden. You do not have access to this resource.';
+            "Forbidden. You do not have access to this resource.";
           return Promise.reject(data);
 
         case 404:
           errorMessage =
-            data?.message || 'The requested resource was not found.';
+            data?.message || "The requested resource was not found.";
           setTimeout(() => {
             Toast.show({
-              type: 'info',
+              type: "info",
               autoHide: true,
-              text1: 'Not Found',
+              text1: "Not Found",
               text2: errorMessage,
             });
           }, 1000);
@@ -100,9 +102,9 @@ instance.interceptors.response.use(
           errorMessage = data?.message || defaultErrorMessage;
           setTimeout(() => {
             Toast.show({
-              type: 'info',
+              type: "info",
               autoHide: true,
-              text1: 'Server Error',
+              text1: "Server Error",
               text2: errorMessage,
             });
           }, 1000);
@@ -112,9 +114,9 @@ instance.interceptors.response.use(
           errorMessage = defaultErrorMessage;
           setTimeout(() => {
             Toast.show({
-              type: 'info',
+              type: "info",
               autoHide: true,
-              text1: 'An error occurred',
+              text1: "An error occurred",
               text2: errorMessage,
             });
           }, 1000);
@@ -122,12 +124,12 @@ instance.interceptors.response.use(
     } else if (error.request) {
       // No response received from the server
       errorMessage =
-        'No response from the server. Please check your connection.';
+        "No response from the server. Please check your connection.";
     }
 
     // Reject with the final error message
     return Promise.reject(errorMessage);
-  },
+  }
 );
 
 const api = instance;

@@ -1,9 +1,9 @@
-import {memo} from 'react';
-import {View, StyleSheet} from 'react-native';
-import Text from '../Typography';
-import {ToDoCardProps} from './interfaces';
-import Icon from 'react-native-vector-icons/Feather';
-import {Colors, Spacing, Sizes} from '../../utils';
+import { memo } from "react";
+import { View, StyleSheet } from "react-native";
+import Text from "../Typography";
+import { ToDoCardProps } from "./interfaces";
+import Icon from "@expo/vector-icons/Feather";
+import { Colors, Spacing, Sizes } from "../../utils";
 
 function TodoCard({
   title,
@@ -14,27 +14,27 @@ function TodoCard({
 }: ToDoCardProps) {
   return (
     <View style={styles.container}>
-      <Text fontSize="large" weight="medium">
+      <Text fontSize='large' weight='medium'>
         {title}
       </Text>
-      <Text fontSize="small" color="darkText" style={styles.bodyText}>
+      <Text fontSize='small' color='darkText' style={styles.bodyText}>
         {body}
       </Text>
       <View style={styles.bottomItem}>
-        <Text color="lightText" fontSize="small">
+        <Text color='lightText' fontSize='small'>
           {new Date(date)?.toDateString()}
         </Text>
         <View style={styles.iconContainer}>
           <Icon
             style={styles.icon}
-            name="edit-3"
+            name='edit-3'
             color={Colors.green}
             onPress={onPressEdit}
             size={20}
           />
           <Icon
             style={[styles.icon, styles.deleteIcon]}
-            name="trash-2"
+            name='trash-2'
             color={Colors.danger}
             onPress={onPressDelete}
             size={20}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderColor: Colors.placeholder,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     paddingHorizontal: Spacing.xxxsmall,
     paddingVertical: Spacing.xxsmall,
     borderRadius: Sizes.INPUT_BORDER_RADIUS,
@@ -62,16 +62,16 @@ const styles = StyleSheet.create({
   },
   bottomItem: {
     marginTop: Spacing.xxsmall,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   iconContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   icon: {
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
   },
   deleteIcon: {
     marginLeft: Spacing.xxsmall,

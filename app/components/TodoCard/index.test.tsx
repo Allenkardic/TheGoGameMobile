@@ -2,7 +2,7 @@
 // import renderer from 'react-test-renderer';
 // import TodoCard from '.';
 // import {Text} from '../Typography';
-// import Icon from 'react-native-vector-icons/Feather';
+// import Icon from '@expo/vector-icons/Feather';
 
 // describe('TodoCard Component', () => {
 //   const mockEditPress = jest.fn();
