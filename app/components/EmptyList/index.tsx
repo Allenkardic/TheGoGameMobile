@@ -2,7 +2,7 @@ import {memo} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {Images, Spacing} from '../../utils';
 import Text from '../Typography';
-import {EmptyListProps} from './interfaces';
+import EmptyListProps from './interfaces';
 
 function EmptyList({text}: EmptyListProps) {
   return (

@@ -1,16 +1,16 @@
-import React, { memo } from "react";
-import Icon from "@expo/vector-icons/Feather";
-import { Pressable, StyleSheet, Platform } from "react-native";
-import { Colors } from "../../utils";
-import { AddIconProps } from "./interfaces";
+import React, {memo} from 'react';
+import Icon from '@expo/vector-icons/Feather';
+import {Pressable, StyleSheet, Platform} from 'react-native';
+import {Colors} from '../../utils';
+import AddIconProps from './interfaces';
 
-function AddIcon({ onPress, style }: AddIconProps) {
+function AddIcon({onPress, style}: AddIconProps) {
   return (
     <Pressable
-      testID='add-icon'
+      testID="add-icon"
       style={[styles.container, style]}
       onPress={onPress}>
-      <Icon name='plus' size={25} color={Colors.white} />
+      <Icon name="plus" size={25} color={Colors.white} />
     </Pressable>
   );
 }
@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 50 / 2,
     backgroundColor: Colors.success,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     elevation: 5,
     shadowColor:
-      Platform.OS === "android" ? "grey" : "rgba(236, 224, 248, 0.5)",
+      Platform.OS === 'android' ? 'grey' : 'rgba(236, 224, 248, 0.5)',
     shadowOffset: {
       width: 2,
       height: 2,

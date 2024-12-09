@@ -1,5 +1,3 @@
-import {GestureResponderEvent} from 'react-native';
-
-export interface EmptyListProps {
+export default interface EmptyListProps {
   text: string;
 }

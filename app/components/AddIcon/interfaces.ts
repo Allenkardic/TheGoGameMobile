@@ -1,6 +1,6 @@
 import {GestureResponderEvent, StyleProp, ViewStyle} from 'react-native';
 
-export interface AddIconProps {
+export default interface AddIconProps {
   onPress?: (event: GestureResponderEvent) => void;
   style?: StyleProp<ViewStyle>;
 }
