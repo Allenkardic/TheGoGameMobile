@@ -12,16 +12,17 @@ import {Sizes, Colors} from '../../utils';
  */
 const Button: IButtonProps = function Button({
   onPress,
-  isSubmitting,
+  isSubmitting = false,
   text,
   style,
 }) {
   return (
     <View style={[styles.container, style]}>
       <Pressable
+        testID="button"
         style={[styles.button]}
         onPress={onPress}
-        disabled={isSubmitting || false}>
+        disabled={isSubmitting}>
         {isSubmitting ? (
           <Spinner color="white" />
         ) : (

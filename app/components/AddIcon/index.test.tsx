@@ -1,5 +1,4 @@
 import React from 'react';
-import {Pressable} from 'react-native';
 import {render} from '@testing-library/react-native';
 import AddIcon from '.';
 import {Colors} from '../../utils';

@@ -6,7 +6,6 @@ const alertPolyfill = (
   title: string | undefined,
   description: string | undefined,
   options: AlertOptionIProps[] = [],
-  extra?: any,
 ): void => {
   const result = window.confirm(
     [title, description].filter(Boolean).join('\n'),

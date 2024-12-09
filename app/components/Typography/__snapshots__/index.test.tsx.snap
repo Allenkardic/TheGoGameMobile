@@ -22,6 +22,7 @@ exports[`Text Component renders with combined styles 1`] = `
       },
     ]
   }
+  testID="text"
 >
   Styled text
 </Text>
@@ -44,6 +45,7 @@ exports[`Text Component renders with default style 1`] = `
       null,
     ]
   }
+  testID="text"
 >
   Default text
 </Text>
@@ -66,6 +68,7 @@ exports[`Text Component renders with specified color 1`] = `
       null,
     ]
   }
+  testID="text"
 >
   Primary text
 </Text>
@@ -91,6 +94,7 @@ exports[`Text Component renders with specified font size 1`] = `
       },
     ]
   }
+  testID="text"
 >
   Large text
 </Text>
@@ -115,6 +119,7 @@ exports[`Text Component renders with specified font weight 1`] = `
       null,
     ]
   }
+  testID="text"
 >
   Bold text
 </Text>

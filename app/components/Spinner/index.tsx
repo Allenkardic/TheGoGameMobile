@@ -11,6 +11,7 @@ const Spinner: React.FC<SpinnerProps> = function Spinner({
 }) {
   return (
     <ActivityIndicator
+      testID="spinner"
       style={[styles.spinner, style]}
       color={color || Colors.primary}
       size={size}

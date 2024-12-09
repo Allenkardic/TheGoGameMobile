@@ -1,7 +1,7 @@
-import React, { useMemo, memo } from "react";
-import { Text as RNText, StyleSheet } from "react-native";
-import { Colors } from "../../utils";
-import { TextProps, FontWeight, FontSize } from "./interfaces";
+import React, {useMemo, memo} from 'react';
+import {Text as RNText, StyleSheet} from 'react-native';
+import {Colors} from '../../utils';
+import {TextProps, FontWeight, FontSize} from './interfaces';
 
 /**
  * This gets the font style for the text component,
@@ -10,15 +10,15 @@ import { TextProps, FontWeight, FontSize } from "./interfaces";
  */
 const getInterFontWeight = (weight?: FontWeight) => {
   switch (weight) {
-    case "light":
+    case 'light':
       return styles.interLight;
-    case "medium":
+    case 'medium':
       return styles.interMedium;
-    case "semi-bold":
+    case 'semi-bold':
       return styles.interSemiBold;
-    case "bold":
+    case 'bold':
       return styles.interBold;
-    case "black":
+    case 'black':
       return styles.interBlackWeight;
     default:
       return null;
@@ -33,15 +33,15 @@ const getInterFontWeight = (weight?: FontWeight) => {
 
 const getFontSize = (size?: FontSize) => {
   switch (size) {
-    case "xsmall":
+    case 'xsmall':
       return styles.fontXsmall;
-    case "small":
+    case 'small':
       return styles.fontSmall;
-    case "base":
+    case 'base':
       return styles.fontBase;
-    case "large":
+    case 'large':
       return styles.fontLarge;
-    case "xlarge":
+    case 'xlarge':
       return styles.fontXlarge;
     default:
       return null;
@@ -56,19 +56,19 @@ export const Text: React.FC<TextProps> = function Text({
 }) {
   const textColor = useMemo(() => {
     switch (color) {
-      case "alt":
+      case 'alt':
         return Colors.altText;
-      case "muted":
+      case 'muted':
         return Colors.muted;
-      case "primary":
+      case 'primary':
         return Colors.primary;
-      case "gray":
+      case 'gray':
         return Colors.grey;
-      case "info":
+      case 'info':
         return Colors.infoText;
-      case "darkText":
+      case 'darkText':
         return Colors.darkText;
-      case "lightText":
+      case 'lightText':
         return Colors.lightText;
       default:
         return Colors.text;
@@ -95,37 +95,37 @@ export const Text: React.FC<TextProps> = function Text({
   }, [fontSize]);
 
   const combinedStyle = useMemo(() => {
-    return [styles.base, { color: textColor }, style, fontStyle, size];
+    return [styles.base, {color: textColor}, style, fontStyle, size];
   }, [fontStyle, style, textColor, size]);
 
-  return <RNText style={combinedStyle} {...props} />;
+  return <RNText style={combinedStyle} {...props} testID="text" />;
 };
 
 const styles = StyleSheet.create({
   base: {
     fontSize: 16,
     lineHeight: 24,
-    fontFamily: "Inter-Regular",
+    fontFamily: 'Inter-Regular',
   },
   small: {
     fontSize: 14,
     lineHeight: 21,
-    fontFamily: "Inter-Regular",
+    fontFamily: 'Inter-Regular',
   },
   interLight: {
-    fontFamily: "Inter-Light",
+    fontFamily: 'Inter-Light',
   },
   interMedium: {
-    fontFamily: "Inter-Medium",
+    fontFamily: 'Inter-Medium',
   },
   interSemiBold: {
-    fontFamily: "Inter-Bold",
+    fontFamily: 'Inter-Bold',
   },
   interBold: {
-    fontFamily: "Inter-Bold",
+    fontFamily: 'Inter-Bold',
   },
   interBlackWeight: {
-    fontFamily: "Inter-Black",
+    fontFamily: 'Inter-Black',
   },
   fontXsmall: {
     fontSize: 11,

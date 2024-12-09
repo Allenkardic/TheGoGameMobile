@@ -116,6 +116,7 @@ const Input: React.FC<InputProps> = ({
             </View>
           )}
           <TextInput
+            testID={'text-input'}
             key={key}
             underlineColorAndroid="rgba(0,0,0,0)"
             style={[
