@@ -4,6 +4,7 @@ module.exports = {
   setupFiles: ['./jest/setup.js'],
   testEnvironment: 'jsdom',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
