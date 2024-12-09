@@ -54,26 +54,10 @@ exports[`AddIcon Component renders correctly 1`] = `
   }
   testID="add-icon"
 >
-  <Text
-    allowFontScaling={false}
-    selectable={false}
-    style={
-      [
-        {
-          "color": "#FFFFFF",
-          "fontSize": 25,
-        },
-        undefined,
-        {
-          "fontFamily": "Feather",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-        {},
-      ]
-    }
-  >
-    
-  </Text>
+  <Icon
+    color="#FFFFFF"
+    name="plus"
+    size={25}
+  />
 </View>
 `;
