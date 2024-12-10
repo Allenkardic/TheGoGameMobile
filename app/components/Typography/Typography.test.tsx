@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {Text} from '../Typography';
+import {Text} from '.';
 
 describe('Text Component', () => {
   it('renders with default style', () => {

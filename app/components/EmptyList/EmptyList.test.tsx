@@ -2,7 +2,7 @@ import React from 'react';
 import {Image} from 'react-native';
 import {Text} from '../Typography';
 import renderer from 'react-test-renderer';
-import EmptyList from './';
+import EmptyList from '.';
 
 describe('EmptyList Component', () => {
   it('renders correctly with given text', () => {
