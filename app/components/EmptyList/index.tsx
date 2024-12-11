@@ -1,4 +1,4 @@
-import {memo} from 'react';
+import React, {memo} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {Images, Spacing} from '../../utils';
 import Text from '../Typography';
